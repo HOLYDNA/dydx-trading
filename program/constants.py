@@ -1,13 +1,13 @@
 from dydx3.constants import API_HOST_GOERLI, API_HOST_MAINNET
 from decouple import config
 
-# !!!! SELECT MODE !!!!!!!
+# !!!! SELECT MODE !!!!
 MODE = "DEVELOPMENT"
 
 # Close all open positions and orders
 ABORT_ALL_POSITIONS = True
 
-# Find Cointegrated pairs
+# Find Cointegrated Pairs
 FIND_COINTEGRATED = True
 
 # Manage Exits
@@ -16,22 +16,22 @@ MANAGE_EXITS = True
 # Place Trades
 PLACE_TRADES = True
 
-# Resolution 
+# Resolution
 RESOLUTION = "1HOUR"
 
-# Stats Windows 
+# Stats Window
 WINDOW = 21
 
 # Thresholds - Opening
 MAX_HALF_LIFE = 24
 ZSCORE_THRESH = 1.5
-USD_PER_TRADE = 5
-USD_MIN_COLLATERAL = 50
+USD_PER_TRADE = 100
+USD_MIN_COLLATERAL = 1880
 
-#Thresholds - Closing
+# Thresholds - Closing
 CLOSE_AT_ZSCORE_CROSS = True
 
-# Etherum Address
+# Ethereum Address
 ETHEREUM_ADDRESS = "0x38F28Df0b5fba5841BaA4583dce4bA0b10810fa3"
 
 # KEYS - PRODUCTION
@@ -45,7 +45,7 @@ DYDX_API_PASSPHRASE_MAINNET = config("DYDX_API_PASSPHRASE_MAINNET")
 # Must be on Testnet in DYDX
 STARK_PRIVATE_KEY_TESTNET = config("STARK_PRIVATE_KEY_TESTNET")
 DYDX_API_KEY_TESTNET = config("DYDX_API_KEY_TESTNET")
-DYDX_API_SECRET_TESTNET = config("DYDX_API_SECRET_TESTNET")
+DYDX_API_SECRET_TESTNET =config("DYDX_API_SECRET_TESTNET")
 DYDX_API_PASSPHRASE_TESTNET = config("DYDX_API_PASSPHRASE_TESTNET")
 
 # KEYS - Export
@@ -58,6 +58,6 @@ DYDX_API_PASSPHRASE = DYDX_API_PASSPHRASE_MAINNET if MODE == "PRODUCTION" else D
 HOST = API_HOST_MAINNET if MODE == "PRODUCTION" else API_HOST_GOERLI
 
 # HTTP PROVIDER
-HTTP_PROVIDER_MAINNET = "https://eth-mainnet.g.alchemy.com/v2/kaf8bvjTD7QNuFkeAdbPo4QIuxcvDYe1"
-HTTP_PROVIDER_TESTNET = "https://eth-goerli.g.alchemy.com/v2/LQ2PImzOiboP7eVZrpDn4V239obA40P1"
+HTTP_PROVIDER_MAINNET = "https://eth-mainnet.g.alchemy.com/v2/C38A2E03uos12XB0zaw4OhkHEZm5Io8T"
+HTTP_PROVIDER_TESTNET = "https://eth-goerli.g.alchemy.com/v2/b9CmjVOibZ3s90EAMdjalLg8Q4sVzfdQ"
 HTTP_PROVIDER = HTTP_PROVIDER_MAINNET if MODE == "PRODUCTION" else HTTP_PROVIDER_TESTNET

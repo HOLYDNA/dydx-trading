@@ -122,7 +122,7 @@ def manage_trade_exits(client):
     # Trigger is_close
     ###
 
-    # Close positions if triggered *********************************************************************
+    # Close positions if triggered
     if is_close:
 
       # Determine side - m1
